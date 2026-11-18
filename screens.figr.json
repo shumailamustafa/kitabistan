@@ -1,0 +1,57 @@
+{
+  "version": 1,
+  "device": "desktop",
+  "root": { "route": "/" },
+  "sections": [
+    { "id": "home", "name": "Home" },
+    { "id": "catalog", "name": "Catalog" },
+    { "id": "checkout", "name": "Cart and checkout" },
+    { "id": "pricing", "name": "Offers and Pricing" }
+  ],
+  "screens": {
+    "scr_home": { "name": "Home", "route": "/", "section": "home", "state": {} },
+    "scr_shop": { "name": "Shop", "route": "/shop", "section": "catalog", "state": {} },
+    "scr_shop_cs": { "name": "Shop: Computer Science and Academic", "route": "/shop?category=cs-academic", "section": "catalog", "state": {} },
+    "scr_shop_empty": { "name": "Shop: no results", "route": "/shop?q=harry", "section": "catalog", "state": {} },
+    "scr_book_alchemist": { "name": "Book: The Alchemist", "route": "/books/the-alchemist", "section": "catalog", "state": {} },
+    "scr_book_peer": { "name": "Book: Peer-e-Kamil", "route": "/books/peer-e-kamil", "section": "catalog", "state": {} },
+    "scr_book_clean_code": { "name": "Book: Clean Code", "route": "/books/clean-code", "section": "catalog", "state": {} },
+    "scr_cart_empty": { "name": "Cart: empty", "route": "/cart", "section": "checkout", "state": {} },
+    "scr_cart": {
+      "name": "Cart: bundle with student discount",
+      "route": "/cart",
+      "section": "checkout",
+      "state": {
+        "cart": [
+          { "id": 7, "qty": 1, "edition": "standard" },
+          { "id": 10, "qty": 1, "edition": "premium" },
+          { "id": 4, "qty": 1, "edition": "standard" }
+        ],
+        "student": true
+      }
+    },
+    "scr_checkout": {
+      "name": "Checkout: Cash on Delivery",
+      "route": "/checkout",
+      "section": "checkout",
+      "state": {
+        "cart": [
+          { "id": 1, "qty": 1, "edition": "standard" },
+          { "id": 11, "qty": 1, "edition": "standard" }
+        ],
+        "code": "READ15"
+      }
+    },
+    "scr_order": {
+      "name": "Order confirmed",
+      "route": "/order-confirmed",
+      "section": "checkout",
+      "state": {
+        "order": { "number": "KB-48213", "total": 2210, "count": 2, "name": "Ayesha Siddiqui", "phone": "0300 1234567", "city": "Lahore" }
+      }
+    },
+    "scr_offers": { "name": "Offers and Pricing", "route": "/offers", "section": "pricing", "state": {} }
+  },
+  "edges": [],
+  "layers": []
+}
